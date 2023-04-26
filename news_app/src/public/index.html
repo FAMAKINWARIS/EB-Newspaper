@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Socket.io App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-ChfqqxuZUCnJSK3gEypfQ!" crossorigin="anonymous">
+    <style>
+      #chat-container {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      #chat-messages {
+        flex: 1;
+        overflow-y: scroll;
+      }
+
+      #chat-form {
+        display: flex;
+        margin-top: auto;
+        padding: 10px;
+      }
+
+      #chat-form input[type="text"] {
+        flex: 1;
+        margin-right: 10px;
+      }
+
+      .message {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+      }
+
+      .message .sender {
+        justify-content: flex-end;
+      }
+
+      .message .receiver {
+        justify-content: flex-start;
+      }
+
+      .message .text {
+        background-color: #fff;
+        border-radius: 5px;
+        padding: 10px;
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+
+      .message .sender .text {
+        background-color: #dcf8c6;
+      }
+
+      .message .receiver .text {
+        background-color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid h-100">
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="col-6">
+          <div id="chat-container">
+            <h1 class="text-center mb-4">Socket.io App</h1>
+            <div id="chat-messages"></div>
+            <form id="chat-form">
+              <div class="form-group">
+                <label for="userName">Your Name:</label>
+                <input type="text" class="form-control" id="userName" />
+              </div>
+              <div class="form-group">
+                <label for="msg">Message:</label>
+                <div class="input-group">
+                  <input type="text" class="form-control" id="msg" />
+                  <div class="input-group-append">
+                    <button type="submit" class="btn btn-primary">Send</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="socket.js"></script>
+  </body>
+</html>
